@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .result-info {
+            margin-bottom: 20px;
+        }
+        .result-info p {
+            margin: 5px 0;
+        }
+        .prediction {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Result Page</h2>
+        <div class="result-info">
+            <p><strong>Gender:</strong> {{ gender }}</p>
+            <p><strong>Age:</strong> {{ age }}</p>
+            <p><strong>Hypertension:</strong> {{ hypertension }}</p>
+            <p><strong>Heart Disease:</strong> {{ heart_disease }}</p>
+            <p><strong>Smoking History:</strong> {{ smoking_history }}</p>
+            <p><strong>BMI:</strong> {{ bmi }}</p>
+            <p><strong>HbA1c Level:</strong> {{ HbA1c_level }}</p>
+            <p><strong>Blood Glucose Level:</strong> {{ blood_glucose_level }}</p>
+        </div>
+        <div class="prediction">
+            <h3>Prediction</h3>
+            <p>The model predicts that the patient is {% if prediction == 1 %}diabetic{% else %}not diabetic{% endif %}.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Diabetics Lab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .welcome-text {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px; /* Adjusted maximum width */
+            width: 100%;
+            box-sizing: border-box;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-text">
+        <h2>Welcome to Diabetics Lab</h2>
+        <p>'Male': 0, 'Female': 1</p>
+        <p>'never': 0, 'No Info': 1, 'current': 2, 'former': 3, 'ever': 4, 'not current': 5</p>
+    </div>
+    <div class="form-container">
+        <form action="{% url 'result' %}" method="post">
+            {% csrf_token %}
+            <label for="gender">gender</label>
+            <input type="text" id="gender" name="gender" required>
+
+            <label for="age">age</label>
+            <input type="text" id="age" name="age" required>
+
+            <label for="hypertension">hypertension</label>
+            <input type="text" id="hypertension" name="hypertension" required>
+
+            <label for="heart_disease">heart_disease</label>
+            <input type="text" id="heart_disease" name="heart_disease" required>
+
+            <label for="smoking_history">smoking_history</label>
+            <input type="text" id="smoking_history" name="smoking_history" required>
+
+            <label for="bmi">bmi</label>
+            <input type="text" id="bmi" name="bmi" required>
+
+            <label for="HbA1c_level">HbA1c_level</label>
+            <input type="text" id="HbA1c_level" name="HbA1c_level" required>
+
+            <label for="blood_glucose_level">blood_glucose_level</label>
+            <input type="text" id="blood_glucose_level" name="blood_glucose_level" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
